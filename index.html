@@ -18,39 +18,25 @@
     style="
       max-width: 900px;
       margin: 0 auto;
-      display: flex;
-      gap: 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 2rem;
+      align-items: start;
     "
   >
-    <div style="max-width: 750px;">
+    <!-- LEFT COLUMN -->
+    <div>
       <h1><a href="#">Pip Chell</a></h1>
 
-      <!-- Text + image aligned to paragraph -->
-      <div
-        style="
-          display: flex;
-          align-items: center; /* aligns image with <p> */
-          gap: 2rem;
-        "
+      <p
+        id="header-paragraph"
+        style="margin-bottom: 1.5rem;"
       >
-        <p style="margin: 0;">
-          I like graphic design, tech and fire stuff. This is my website in case
-          you didn't realise. Did I mention I like computers? :)
-        </p>
+        I like graphic design, tech and fire stuff. This is my website in case you
+        didn't realise. Did I mention I like computers? :)
+      </p>
 
-        <img
-          src="https://i.postimg.cc/XJSKdCTW/Untitled-design-removebg-preview.png"
-          alt=""
-          style="
-            width: 180px;
-            height: auto;
-            padding: 1rem;
-            flex-shrink: 0;
-          "
-        >
-      </div>
-
-      <ul class="actions" style="margin-top: 1.5rem;">
+      <ul class="actions">
         <li>
           <a href="#one" class="button icon solid fa-chevron-down scrolly">
             About Me
@@ -58,8 +44,22 @@
         </li>
       </ul>
     </div>
+
+    <!-- RIGHT COLUMN (image aligned to <p>) -->
+    <img
+      src="https://i.postimg.cc/XJSKdCTW/Untitled-design-removebg-preview.png"
+      alt=""
+      style="
+        width: 180px;
+        height: auto;
+        padding: 1rem;
+        align-self: center;
+        margin-top: 2.5rem; /* aligns image with <p> */
+      "
+    >
   </div>
 </header>
+
 
 		<!-- One -->
 			<section id="one" class="wrapper style2 special">
@@ -145,6 +145,7 @@
 	</body>
 
 </html>
+
 
 
 
