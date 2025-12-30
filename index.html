@@ -130,155 +130,90 @@
 		
 		
 		
-		<style>
-        :root {
-            --cta-bg: #FBFBFB;
-            --cta-heading-color: #828282;
-            --cta-link-color: #4A98e5;
-            --cta-link-hover-color: #5CA3E8;
+		<!-- Footer -->
+<footer class="footer-agency" role="contentinfo">
+    <section class="footer-agency__cta" aria-labelledby="cta-heading">
+        <div class="container">
+            <h2 id="cta-heading" class="footer-agency__cta-heading">Let's Work Together</h2>
+            <a href="mailto:hi@pipchell.com" class="footer-agency__cta-link">hi@pipchell.com</a>
+        </div>
+    </section>
 
-            --footer-bg: #4A98E5;
-            --footer-text: #ffffff;
-            --footer-link-hover: #ffffff;
-        }
+    <section class="footer-agency__bottom">
+        <div class="container footer-agency__bottom-container">
+            <nav class="footer-agency__nav" aria-label="Footer Navigation">
+                <ul>
+                    <li><a href="#header" class="footer-button">Home</a></li>
+                    <li><a href="#one" class="footer-button">About</a></li>
+                    <li><a href="#two" class="footer-button">Interests</a></li>
+                </ul>
+            </nav>
+            <p class="footer-agency__copyright">&copy; 2025 Pip Chell</p>
+        </div>
+    </section>
+</footer>
 
-        /* Basic body styles */
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: #ffffff;
-        }
-        
-        main {
-            flex-grow: 1;
-        }
+<style>
+:root {
+    --footer-bg: #4A98E5;
+    --footer-text: #ffffff;
+    --footer-link-hover: #ffffff;
+    --site-font: 'League Spartan', sans-serif; /* Replace if needed */
+}
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+/* Footer Bottom */
+.footer-agency__bottom {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 2rem 0;
+}
 
-        .main-content {
-            padding: 2rem 0;
-        }
+.footer-agency__bottom-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to left */
+    gap: 1.5rem;
+}
 
-        /* FOOTER STYLES START HERE */
-        
-        .footer-agency {
-            text-align: center;
-        }
+.footer-agency__nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
 
-        /* CTA Section */
-        .footer-agency__cta {
-            background-color: var(--cta-bg);
-            padding: 4rem 1.5rem;
-        }
+.footer-agency__nav a.footer-button {
+    color: #ffffff; /* Button text white */
+    text-decoration: none;
+    font-family: var(--site-font);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: color 0.2s;
+}
 
-        .footer-agency__cta-heading {
-            font-size: 2.5rem;
-            font-weight: normal;
-            color: var(--cta-heading-color);
-            margin: 0 0 1rem 0;
-        }
+.footer-agency__nav a.footer-button:hover {
+    color: var(--footer-link-hover);
+}
 
-        .footer-agency__cta-link {
-            font-size: 1.5rem;
-            font-weight: normal;
-            color: var(--cta-link-color);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer-agency__cta-link:hover {
-            color: var(--cta-link-hover-color);
-            text-decoration: underline;
-        }
+.footer-agency__copyright {
+    font-family: var(--site-font);
+    font-size: 0.875rem;
+    margin: 0;
+}
 
-        /* Bottom Bar Section */
-        .footer-agency__bottom {
-            background-color: var(--footer-bg);
-            color: var(--footer-text);
-            padding: 2rem 0;
-        }
+/* Responsive */
+@media (min-width: 768px) {
+    .footer-agency__bottom-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+</style>
 
-        .footer-agency__bottom-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .footer-agency__nav ul,
-        .footer-agency__social ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .footer-agency__nav a,
-        .footer-agency__social a {
-            color: var(--footer-text);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .footer-agency__nav a:hover,
-        .footer-agency__social a:hover {
-            color: var(--footer-link-hover);
-        }
-
-        .footer-agency__social svg {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
-
-        .footer-agency__copyright {
-            font-size: 0.875rem;
-        }
-        
-        /* Media query for larger screens */
-        @media (min-width: 768px) {
-            .footer-agency__cta-heading { font-size: 3rem; }
-            .footer-agency__cta-link { font-size: 1.75rem; }
-            .footer-agency__bottom-container {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
-    </style>
-</head>
-<body>
-    <footer class="footer-agency" role="contentinfo">
-        <section class="footer-agency__cta" aria-labelledby="cta-heading">
-            <div class="container">
-                <h2 id="cta-heading" class="footer-agency__cta-heading">Let's Work Together</h2>
-                <a href="mailto:hi@pipchell.com" class="footer-agency__cta-link">hi@pipchell.com</a>
-            </div>
-        </section>
-
-        <section class="footer-agency__bottom">
-            <div class="container footer-agency__bottom-container">
-                <nav class="footer-agency__nav" aria-label="Footer Navigation">
-                    <ul>
-                        <li><a href="#header" class = "button icon solid fa-chevron-up scrolly">Home</a></li>
-                        <li><a href="#one" class = "button icon solid fa-chevron-up scrolly">About</a></li>
-                        <li><a href="#two" class = "button icon solid fa-chevron-up scrolly">Interests</a></li>
-                    </ul>
-                </nav>
-                <p class="footer-agency__copyright">&copy; 2025 Pip Chell</p>
-            </div>
-        </section>
-    </footer>
 
 		
 	
@@ -310,6 +245,7 @@
 	</body>
 
 </html>
+
 
 
 
