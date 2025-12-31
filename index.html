@@ -124,27 +124,6 @@
 			</section>
 
 		<!-- Footer -->
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		<style>
         :root {
@@ -156,6 +135,13 @@
             --footer-bg: #4A98E5;
             --footer-text: #ffffff;
             --footer-link-hover: #ffffff;
+            
+            /* Dark mode variables */
+            --dark-bg: #121212;
+            --dark-text: #e0e0e0;
+            --dark-cta-bg: #1e1e1e;
+            --dark-cta-heading: #b0b0b0;
+            --dark-footer-bg: #0a3d62;
         }
 
         /* Basic body styles */
@@ -166,32 +152,89 @@
             flex-direction: column;
             min-height: 100vh;
             background-color: #ffffff;
+            color: #333333;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-			/* Make the header section full viewport height */
-#header {
-    min-height: 100vh; /* Makes it at least the height of the viewport */
-    display: flex;
-    align-items: center; /* Vertically center content */
-}
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
 
-/* If the header has existing flex properties, you might need: */
-#header .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-}
+        /* Make the header section full viewport height */
+        #header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
 
-/* Or if you want everything in the header centered: */
-#header {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+        /* Dark mode styles for sections */
+        body.dark-mode section {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
 
-	        p {
+        body.dark-mode .wrapper.style2.special {
+            background-color: #1a1a1a;
+        }
+
+        body.dark-mode .wrapper {
+            background-color: #1a1a1a;
+        }
+
+        /* Update CTA section for dark mode */
+        body.dark-mode .footer-agency__cta {
+            background-color: var(--dark-cta-bg);
+        }
+
+        body.dark-mode .footer-agency__cta-heading {
+            color: var(--dark-cta-heading);
+        }
+
+        /* Update bottom footer for dark mode */
+        body.dark-mode .footer-agency__bottom {
+            background-color: var(--dark-footer-bg);
+        }
+
+        /* Dark mode button styles */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 4px;
+            color: var(--footer-text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-toggle i {
+            font-size: 1rem;
+        }
+
+        /* Theme toggle container */
+        .theme-toggle-container {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .footer-agency__bottom-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        p {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             display: flex;
@@ -224,6 +267,7 @@
         .footer-agency__cta {
             background-color: var(--cta-bg);
             padding: 4rem 1.5rem;
+            transition: background-color 0.3s;
         }
 
         .footer-agency__cta-heading {
@@ -231,6 +275,7 @@
             font-weight: normal;
             color: var(--cta-heading-color);
             margin: 0 0 1rem 0;
+            transition: color 0.3s;
         }
 
         .footer-agency__cta-link {
@@ -250,6 +295,7 @@
             background-color: var(--footer-bg);
             color: var(--footer-text);
             padding: 2rem 0;
+            transition: background-color 0.3s;
         }
 
         .footer-agency__bottom-container {
@@ -293,43 +339,43 @@
             font-size: 0.875rem;
         }
 
-		.footer-agency__copyright {
-    text-align: center;
-    color: var(--footer-text);
-    font-size: 0.875rem;
-    margin-top: 1rem;
-	font-family: Arial, Helvetica, sans-serif !important;
-	font-weight: normal;		
-}
+        .footer-agency__copyright {
+            text-align: center;
+            color: var(--footer-text);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            font-family: Arial, Helvetica, sans-serif !important;
+            font-weight: normal;		
+        }
 
-			/* Add this to your existing CSS */
-.footer-agency__nav ul {
-    justify-content: center !important;
-    width: 100%;
-}
+        /* Add this to your existing CSS */
+        .footer-agency__nav ul {
+            justify-content: center !important;
+            width: 100%;
+        }
 
-.footer-agency__nav {
-    width: 100%;
-}
+        .footer-agency__nav {
+            width: 100%;
+        }
 
-.footer-agency__nav li {
-    display: inline-block;
-}
+        .footer-agency__nav li {
+            display: inline-block;
+        }
 
-.footer-agency__nav a.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    transition: background-color 0.2s;
-}
+        .footer-agency__nav a.button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
 
-.footer-agency__nav a.button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
+        .footer-agency__nav a.button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
         
         /* Media query for larger screens */
         @media (min-width: 768px) {
@@ -355,124 +401,93 @@
             <div class="container footer-agency__bottom-container">
                 <nav class="footer-agency__nav" aria-label="Footer Navigation">
                     <ul>
-                        <li><a href="#header" class = "button icon solid fa-chevron-up scrolly">Home</a></li>
-                        <li><a href="#one" class = "button icon solid fa-chevron-up scrolly">About</a></li>
-                        <li><a href="#two" class = "button icon solid fa-chevron-up scrolly">Interests</a></li>
+                        <li><a href="#header" class="button icon solid fa-chevron-up scrolly">Home</a></li>
+                        <li><a href="#one" class="button icon solid fa-chevron-up scrolly">About</a></li>
+                        <li><a href="#two" class="button icon solid fa-chevron-up scrolly">Interests</a></li>
                     </ul>
                 </nav>
+                
+                <!-- Theme Toggle Button -->
+                <div class="theme-toggle-container">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                        <i class="fas fa-moon"></i>
+                        <span>Dark Mode</span>
+                    </button>
+                </div>
             </div>
 
-		
-<p class="footer-agency__copyright" style="font-family: Arial, Helvetica, sans-serif; font-weight: normal; line-height: 5em; letter-spacing: -0.015em; text-align: center;">&copy; 2025 Pip Chell</p>
-
+            <p class="footer-agency__copyright" style="font-family: Arial, Helvetica, sans-serif; font-weight: normal; line-height: 5em; letter-spacing: -0.015em; text-align: center;">&copy; 2025 Pip Chell</p>
         </section>
     </footer>
 
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+	<!-- Dark/Light Mode Script -->
+	<script>
+		// Check for saved theme preference or prefer-color-scheme
+		function getThemePreference() {
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme) {
+				return savedTheme;
+			}
+			// Check system preference
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+
+		// Apply theme
+		function applyTheme(theme) {
+			const body = document.body;
+			const themeToggle = document.getElementById('themeToggle');
+			const icon = themeToggle.querySelector('i');
+			const text = themeToggle.querySelector('span');
+			
+			if (theme === 'dark') {
+				body.classList.add('dark-mode');
+				icon.classList.remove('fa-moon');
+				icon.classList.add('fa-sun');
+				text.textContent = 'Light Mode';
+			} else {
+				body.classList.remove('dark-mode');
+				icon.classList.remove('fa-sun');
+				icon.classList.add('fa-moon');
+				text.textContent = 'Dark Mode';
+			}
+			
+			// Save preference
+			localStorage.setItem('theme', theme);
+		}
+
+		// Toggle theme
+		function toggleTheme() {
+			const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+			const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+			applyTheme(newTheme);
+		}
+
+		// Initialize theme on page load
+		document.addEventListener('DOMContentLoaded', () => {
+			const theme = getThemePreference();
+			applyTheme(theme);
+			
+			// Add event listener to theme toggle button
+			document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+		});
+
+		// Listen for system theme changes
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+			// Only apply system theme if user hasn't made a manual choice
+			if (!localStorage.getItem('theme')) {
+				const newTheme = e.matches ? 'dark' : 'light';
+				applyTheme(newTheme);
+			}
+		});
+	</script>
 
 	</body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
