@@ -107,7 +107,7 @@
 					<p>All of my project files are avalible on my github page. You can see them here.</p>
 				</header>
 				<ul class="actions special">
-					<li><a href="https://github.com/pipchell/" target=”_blank” class="button primary">Github</a></li>
+					<li><a href="https://github.com/pipchell/" target="_blank" class="button primary">Github</a></li>
 				</ul>
 			</section>
 
@@ -117,9 +117,9 @@
 					<p>You can reach me via email.</p>
 				</header>
 				<ul class="actions special">
-					<li><a href="mailto:pip@pipchell.com" target=”_blank” class="button primary">Personal</a></li>
-					<li><a href="mailto:hi@pipchell.com" target=”_blank” class="button primary">Site</a></li>
-	                <li><a href="mailto:support@pipchell.com" target=”_blank” class="button primary">Support</a></li>
+					<li><a href="mailto:pip@pipchell.com" target="_blank" class="button primary">Personal</a></li>
+					<li><a href="mailto:hi@pipchell.com" target="_blank" class="button primary">Site</a></li>
+	                <li><a href="mailto:support@pipchell.com" target="_blank" class="button primary">Support</a></li>
 				</ul>
 			</section>
 
@@ -139,9 +139,8 @@
             /* Dark mode variables */
             --dark-bg: #121212;
             --dark-text: #e0e0e0;
-            --dark-cta-bg: #1e1e1e;
-            --dark-cta-heading: #b0b0b0;
-            --dark-footer-bg: #0a3d62;
+            --dark-cta-bg: #121212;
+            --dark-cta-heading: #e0e0e0;
         }
 
         /* Basic body styles */
@@ -157,8 +156,33 @@
         }
 
         body.dark-mode {
-            background-color: var(--dark-bg);
-            color: var(--dark-text);
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        /* Remove lines between sections */
+        section {
+            border: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+        
+        .wrapper {
+            border: none !important;
+            box-shadow: none !important;
+        }
+        
+        .spotlight {
+            border: none !important;
+            border-bottom: none !important;
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        
+        /* Remove any borders from wrapper sections */
+        .wrapper.style2.special {
+            border-top: none !important;
+            border-bottom: none !important;
         }
 
         /* Make the header section full viewport height */
@@ -170,33 +194,50 @@
 
         /* Dark mode styles for sections */
         body.dark-mode section {
-            background-color: var(--dark-bg);
-            color: var(--dark-text);
+            background-color: #121212;
+            color: #e0e0e0;
         }
 
         body.dark-mode .wrapper.style2.special {
-            background-color: #1a1a1a;
+            background-color: #121212;
         }
 
         body.dark-mode .wrapper {
-            background-color: #1a1a1a;
+            background-color: #121212;
         }
 
-        /* Update CTA section for dark mode */
+        body.dark-mode .spotlight {
+            background-color: #121212;
+        }
+        
+        body.dark-mode .inner.alt {
+            background-color: #121212;
+        }
+
+        /* Update CTA section for dark mode - KEEP BLUE THE SAME */
         body.dark-mode .footer-agency__cta {
-            background-color: var(--dark-cta-bg);
+            background-color: #121212; /* Same dark background */
         }
 
         body.dark-mode .footer-agency__cta-heading {
-            color: var(--dark-cta-heading);
+            color: #e0e0e0; /* Light text for dark mode */
         }
 
-        /* Update bottom footer for dark mode */
+        /* Update bottom footer for dark mode - KEEP BLUE THE SAME */
         body.dark-mode .footer-agency__bottom {
-            background-color: var(--dark-footer-bg);
+            background-color: #4A98E5; /* Same blue as light mode */
         }
 
-        /* Dark mode button styles */
+        /* Dark mode button styles - keep blue buttons the same */
+        body.dark-mode .button.primary {
+            background-color: #4A98E5 !important;
+            color: #ffffff !important;
+        }
+        
+        body.dark-mode .button.primary:hover {
+            background-color: #5CA3E8 !important;
+        }
+
         .theme-toggle {
             background: rgba(255, 255, 255, 0.1);
             border: none;
@@ -210,6 +251,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 0.9rem;
             transition: background-color 0.2s;
+            margin-top: 1rem;
         }
 
         .theme-toggle:hover {
@@ -220,11 +262,12 @@
             font-size: 1rem;
         }
 
-        /* Theme toggle container */
+        /* Theme toggle container - now under nav */
         .theme-toggle-container {
             display: flex;
             justify-content: center;
-            margin: 1rem 0;
+            width: 100%;
+            margin-top: 1rem;
         }
 
         .footer-agency__bottom-container {
@@ -232,6 +275,26 @@
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
+        }
+
+        /* Navigation styles */
+        .footer-agency__nav {
+            width: 100%;
+        }
+
+        .footer-agency__nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .footer-agency__nav li {
+            display: inline-block;
         }
 
         p {
@@ -298,24 +361,6 @@
             transition: background-color 0.3s;
         }
 
-        .footer-agency__bottom-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .footer-agency__nav ul,
-        .footer-agency__social ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
         .footer-agency__nav a,
         .footer-agency__social a {
             color: var(--footer-text) !important;
@@ -348,20 +393,6 @@
             font-weight: normal;		
         }
 
-        /* Add this to your existing CSS */
-        .footer-agency__nav ul {
-            justify-content: center !important;
-            width: 100%;
-        }
-
-        .footer-agency__nav {
-            width: 100%;
-        }
-
-        .footer-agency__nav li {
-            display: inline-block;
-        }
-
         .footer-agency__nav a.button {
             display: inline-flex;
             align-items: center;
@@ -382,8 +413,8 @@
             .footer-agency__cta-heading { font-size: 3rem; }
             .footer-agency__cta-link { font-size: 1.75rem; }
             .footer-agency__bottom-container {
-                flex-direction: row;
-                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -405,15 +436,15 @@
                         <li><a href="#one" class="button icon solid fa-chevron-up scrolly">About</a></li>
                         <li><a href="#two" class="button icon solid fa-chevron-up scrolly">Interests</a></li>
                     </ul>
+                    
+                    <!-- Theme Toggle Button - Now under nav buttons -->
+                    <div class="theme-toggle-container">
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                            <i class="fas fa-moon"></i>
+                            <span>Dark Mode</span>
+                        </button>
+                    </div>
                 </nav>
-                
-                <!-- Theme Toggle Button -->
-                <div class="theme-toggle-container">
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-                        <i class="fas fa-moon"></i>
-                        <span>Dark Mode</span>
-                    </button>
-                </div>
             </div>
 
             <p class="footer-agency__copyright" style="font-family: Arial, Helvetica, sans-serif; font-weight: normal; line-height: 5em; letter-spacing: -0.015em; text-align: center;">&copy; 2025 Pip Chell</p>
